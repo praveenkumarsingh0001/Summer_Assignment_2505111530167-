@@ -1,11 +1,16 @@
 #include <stdio.h>
-int main(){
-    printf("enter a  positive integer (N):");
-    scanf("%d",&n);
-    for(int i=1; i<=n; i++){
-        sum+=i;
-    }
-    printf("sum of first %d natural number is:%d\n",n,sum);
-    return 0;
 
+int main() {
+    int n, i, sum = 0;
+
+    printf("Enter the value of N: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        sum = sum + i;
     }
+
+    printf("Sum of first %d natural numbers = %d", n, sum);
+
+    return 0;
+}
