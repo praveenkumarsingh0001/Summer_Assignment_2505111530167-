@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+    int id[100], n = 0, i, choice;
+    char name[100][50];
+    float salary[100];
+
+    do {
+        printf("\n===== Employee Management =====\n");
+        printf("1. Add Employee\n");
+        printf("2. View Employees\n");
+        printf("3. Exit\n");
+
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+
+        case 1:
+            printf("Enter Employee ID: ");
+            scanf("%d", &id[n]);
+
+            printf("Enter Name: ");
+            scanf("%s", name[n]);
+
+            printf("Enter Salary: ");
+            scanf("%f", &salary[n]);
+
+            n++;
+            break;
+
+        case 2:
+            for(i = 0; i < n; i++) {
+                printf("\nID : %d", id[i]);
+                printf("\nName : %s", name[i]);
+                printf("\nSalary : %.2f\n", salary[i]);
+            }
+            break;
+
+        case 3:
+            printf("Thank You");
+            break;
+
+        default:
+            printf("Invalid Choice");
+        }
+
+    } while(choice != 3);
+
+    return 0;
+}
