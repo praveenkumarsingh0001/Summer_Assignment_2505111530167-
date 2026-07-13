@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main() {
+
+    int id[100], quantity[100];
+    char product[100][50];
+    int n = 0, choice, i;
+
+    do {
+
+        printf("\n===== Inventory Management =====\n");
+        printf("1. Add Product\n");
+        printf("2. View Products\n");
+        printf("3. Exit\n");
+
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+
+        case 1:
+            printf("Enter Product ID: ");
+            scanf("%d", &id[n]);
+
+            printf("Enter Product Name: ");
+            scanf("%s", product[n]);
+
+            printf("Enter Quantity: ");
+            scanf("%d", &quantity[n]);
+
+            n++;
+
+            printf("Product Added Successfully\n");
+            break;
+
+        case 2:
+            printf("\nInventory List\n");
+
+            for(i = 0; i < n; i++) {
+                printf("\nID : %d", id[i]);
+                printf("\nProduct : %s", product[i]);
+                printf("\nQuantity : %d\n", quantity[i]);
+            }
+
+            break;
+
+        case 3:
+            printf("Thank You\n");
+            break;
+
+        default:
+            printf("Invalid Choice\n");
+        }
+
+    } while(choice != 3);
+
+    return 0;
+}
