@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    int roll[100], n = 0, choice, i;
+    char name[100][50];
+    float marks[100];
+
+    do {
+        printf("\n===== Student Record System =====\n");
+        printf("1. Add Student\n");
+        printf("2. View Students\n");
+        printf("3. Exit\n");
+
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+
+        case 1:
+            printf("Enter Roll Number: ");
+            scanf("%d", &roll[n]);
+
+            printf("Enter Name: ");
+            scanf("%s", name[n]);
+
+            printf("Enter Marks: ");
+            scanf("%f", &marks[n]);
+
+            n++;
+            printf("Student Added Successfully\n");
+            break;
+
+        case 2:
+            printf("\nStudent Records\n");
+
+            for(i = 0; i < n; i++) {
+                printf("\nRoll No : %d", roll[i]);
+                printf("\nName    : %s", name[i]);
+                printf("\nMarks   : %.2f\n", marks[i]);
+            }
+            break;
+
+        case 3:
+            printf("Thank You\n");
+            break;
+
+        default:
+            printf("Invalid Choice\n");
+        }
+
+    } while(choice != 3);
+
+    return 0;
+}
